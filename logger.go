@@ -42,6 +42,10 @@ func New() *Logger {
 	return l
 }
 
+func (l *Logger) Logger() *log.Logger {
+	return l.logger
+}
+
 func (l *Logger) SetLevel(level string) {
 	if lvl, ok := loglevels[level]; !ok {
 		l.Config.Loglevel = INFO
