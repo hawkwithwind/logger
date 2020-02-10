@@ -62,6 +62,12 @@ func (l *Logger) SetPrefix(prefix string) {
 	l.Config.Prefix = prefix
 }
 
+func (l *Logger) SetDefault(prefix string) {
+	l.Config.Loglevel = INFO
+	l.Config.Flag = log.Ldate|log.Ltime
+	l.Config.Prefix = prefix
+}
+
 func (l *Logger) Init() error {
 	var out io.Writer
 	if l.Config.Logpath == "" {
